@@ -1,0 +1,26 @@
+{
+  "name": "Blaze tools",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "An experimental Chrome extension",
+  "homepage_url": "https://meteor.com",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "default_locale": "en",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "background": {
+    "scripts": [
+      "background/background.js"
+    ],
+    "persistent": true
+  },
+  "devtools_page": "main.html",
+  "permissions": [
+    "tabs",
+    "https://*/*",
+    "http://*/*"
+  ]
+}

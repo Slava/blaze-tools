@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <template name="main">
+      {{debug}}
+      <a href="#" id="start">Start</a>
+      <a href="#" id="stop">Stop</a>
+      {{#each stuff}}
+        {{_id}}
+      {{/each}}
+    </template>
+
+    <script src="lib/blaze.js"></script>
+    <script src="panel.js"></script>
+  </head>
+  <body>
+  </body>
+</html>
+
+
+
