@@ -3,8 +3,15 @@
   <head>
     <script type="text/spacebars" name="main">
       {{debug}}
-      <a href="#" id="start">Start</a>
-      <a href="#" id="stop">Stop</a>
+      {{#unless started}}
+        <a href="#" id="start">Start</a>
+      {{else}}
+        <a href="#" id="stop">Stop</a>
+      {{/unless}}
+<input name=prop type="radio" id="totalTime" checked/><label for="totalTime">total time</label>
+<input name=prop type="radio" id="aveTime"/><label for="aveTime">average time</label>
+<input name=prop type="radio" id="recomputations"/><label for="recomputations"># of recomputations</label>
+
       {{> chart}}
     </script>
 
@@ -26,8 +33,14 @@
 
     <script type="text/spacebars" name="row">
       <g transform="translate({{x}}, {{y}})">
-        {{#each data.values}}
-          <rect y="0" x={{offset ..}} height="60" width={{width ..}} style="fill: hsl({{color ..}}, 100%, 80%);"></rect>
+        {{#each orderedValues}}
+        <g>
+          <rect y="0" x={{offset}} height="60" width={{width}} style="fill: hsl({{color}}, 100%, 80%);">
+          </rect>
+          <text style="font-size:15px;" transform="translate({{offset}},20)">
+            {{value}}
+          </text>
+        </g>
         {{/each}}
         <g class="tick major" transform="translate(0,39.5)">
           <text x={{maxWidth}} y="0" style="font-size:20px;text-anchor: end;font-family:helvetica;">
