@@ -1,7 +1,14 @@
 chrome.devtools.panels.create(
-  "Blaze tools",
+  "Tracker Profiler",
   "icon128.png",
-  "panel.html",
+  "tracker-profiler.html",
+  function (panel) {
+  }
+);
+chrome.devtools.panels.create(
+  "DDP Analyzer",
+  "icon128.png",
+  "ddp-analyzer.html",
   function (panel) {
   }
 );

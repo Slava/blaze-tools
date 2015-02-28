@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <script type="text/spacebars" name="main">
+      {{#each connections}}
+        {{> ddpMessages connection=.}}
+      {{/each}}
+    </script>
+
+    <script type="text/spacebars" name="ddpMessages">
+      <h1>{{connection.name}}</h1>
+      {{#each messages}}
+      <div>{{body}} - {{type}}</div>
+      {{/each}}
+    </script>
+
+    <script src="lib/blaze.js"></script>
+    <script src="ddp-analyzer.js"></script>
+    <script src="inject.js"></script>
+  </head>
+  <body>
+  </body>
+</html>
+
+
